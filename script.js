@@ -3,7 +3,7 @@ function submit(){
     let table = document.getElementById('myTable');
     var input = document.getElementById('input');
     var table_size = parseInt(input.value);
-    if (table_size > 40){
+    if (table_size > 30){
         return;
     }
     input.value = '';
@@ -13,7 +13,7 @@ function submit(){
         var html_row = document.createElement('tr');
     for (var col = 1; col <= table_size; col++){
         var html_col = document.createElement('th');
-        // html_col.setAttribute('width', '30px');
+        html_col.setAttribute('id', `${row} ${col}`);
         html_col.textContent = row*col;
         html_row.appendChild(html_col);
         
